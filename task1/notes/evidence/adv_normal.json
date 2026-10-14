@@ -1,0 +1,86 @@
+{
+ "fire": "normal",
+ "q": "Please use the add tool to compute 12345.678 + 8765.432. Do not search the web.",
+ "thread_id": "412912ba-9005-4c60-9b81-aca7293396db",
+ "messages": [
+  {
+   "content": "Please use the add tool to compute 12345.678 + 8765.432. Do not search the web.",
+   "additional_kwargs": {},
+   "response_metadata": {},
+   "type": "human",
+   "name": null,
+   "id": "3c2546a5-2c80-4730-a6c2-9bf50ccbab78"
+  },
+  {
+   "content": "",
+   "additional_kwargs": {},
+   "response_metadata": {
+    "finish_reason": "tool_calls",
+    "model_name": "glm-5.3",
+    "model_provider": "openai"
+   },
+   "type": "ai",
+   "name": null,
+   "id": "lc_run--01a13aed-80c8-7712-a768-08dfa5528994",
+   "tool_calls": [
+    {
+     "name": "add",
+     "args": {
+      "a": 12345.678,
+      "b": 8765.432
+     },
+     "id": "call_b3e89ce64607456684033d81",
+     "type": "tool_call"
+    }
+   ],
+   "invalid_tool_calls": [],
+   "usage_metadata": {
+    "input_tokens": 5474,
+    "output_tokens": 74,
+    "total_tokens": 5548,
+    "input_token_details": {
+     "cache_read": 5440
+    },
+    "output_token_details": {
+     "reasoning": 48
+    }
+   }
+  },
+  {
+   "content": "21111.11",
+   "additional_kwargs": {},
+   "response_metadata": {},
+   "type": "tool",
+   "name": "add",
+   "id": "0e93c01d-a9f7-407b-b215-9e0eaca2cb19",
+   "tool_call_id": "call_b3e89ce64607456684033d81",
+   "artifact": null,
+   "status": "success"
+  },
+  {
+   "content": "The sum of 12345.678 + 8765.432 is **21111.11**.",
+   "additional_kwargs": {},
+   "response_metadata": {
+    "finish_reason": "stop",
+    "model_name": "glm-5.3",
+    "model_provider": "openai"
+   },
+   "type": "ai",
+   "name": null,
+   "id": "lc_run--01a13aed-93e9-7621-84db-2cf2b01e3669",
+   "tool_calls": [],
+   "invalid_tool_calls": [],
+   "usage_metadata": {
+    "input_tokens": 5508,
+    "output_tokens": 54,
+    "total_tokens": 5562,
+    "input_token_details": {
+     "cache_read": 5504
+    },
+    "output_token_details": {
+     "reasoning": 27
+    }
+   }
+  }
+ ]
+}

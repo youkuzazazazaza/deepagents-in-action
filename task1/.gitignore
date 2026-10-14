@@ -1,0 +1,7 @@
+# 安全保险丝：密钥与本地配置绝不入公开仓库
+.env*
+*.env
+*.log
+basic_trace.json
+__pycache__/
+.DS_Store

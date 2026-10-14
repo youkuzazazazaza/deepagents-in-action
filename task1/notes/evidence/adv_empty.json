@@ -1,0 +1,85 @@
+{
+ "fire": "empty",
+ "q": "Please use the add tool to compute the sum. Do not search the web.",
+ "thread_id": "46bdcf77-7de3-4d6f-896b-ad2ae699c1f7",
+ "messages": [
+  {
+   "content": "Please use the add tool to compute the sum. Do not search the web.",
+   "additional_kwargs": {},
+   "response_metadata": {},
+   "type": "human",
+   "name": null,
+   "id": "f33da4ba-b182-4fc6-814a-731307cd7004"
+  },
+  {
+   "content": "",
+   "additional_kwargs": {},
+   "response_metadata": {
+    "finish_reason": "tool_calls",
+    "model_name": "glm-5.3",
+    "model_provider": "openai"
+   },
+   "type": "ai",
+   "name": null,
+   "id": "lc_run--01a13aed-c45e-7b01-a2b0-96b8d3409c7b",
+   "tool_calls": [
+    {
+     "name": "ls",
+     "args": {
+      "path": "/"
+     },
+     "id": "call_ff4db8d632f94c7f8268c562",
+     "type": "tool_call"
+    }
+   ],
+   "invalid_tool_calls": [],
+   "usage_metadata": {
+    "input_tokens": 5462,
+    "output_tokens": 263,
+    "total_tokens": 5725,
+    "input_token_details": {
+     "cache_read": 5440
+    },
+    "output_token_details": {
+     "reasoning": 252
+    }
+   }
+  },
+  {
+   "content": "No files found",
+   "additional_kwargs": {},
+   "response_metadata": {},
+   "type": "tool",
+   "name": "ls",
+   "id": "e3db73fc-7b92-44f3-9495-66c4671e93a3",
+   "tool_call_id": "call_ff4db8d632f94c7f8268c562",
+   "artifact": null,
+   "status": "success"
+  },
+  {
+   "content": "I checked for any supplied material, but the filesystem contains no files with numbers to sum, and your message didn't include any values.\n\nCould you please provide the numbers you'd like me to add? Once you share them, I'll compute the sum precisely using the `add` tool (no web searching involved).",
+   "additional_kwargs": {},
+   "response_metadata": {
+    "finish_reason": "stop",
+    "model_name": "glm-5.3",
+    "model_provider": "openai"
+   },
+   "type": "ai",
+   "name": null,
+   "id": "lc_run--01a13aed-edd6-7f23-85ae-d4cb65836227",
+   "tool_calls": [],
+   "invalid_tool_calls": [],
+   "usage_metadata": {
+    "input_tokens": 5480,
+    "output_tokens": 211,
+    "total_tokens": 5691,
+    "input_token_details": {
+     "cache_read": 5440
+    },
+    "output_token_details": {
+     "reasoning": 146
+    }
+   }
+  }
+ ]
+}
