@@ -1,0 +1,24 @@
+==== 实验1：deny /secret/** ====
+- human                   "请把内容 '内幕情报' 写入 /secret/plan.md，写入成功后 read_file 读回确认。如果被拒绝，就改写入 /workspace/plan.md 并告诉我你最终写到了哪里。" <<< 被拒
+- ai                      "I'll try writing to `/secret/plan.md` first."
+- tool       write_file   'Error: permission denied for write on /secret/plan.md' <<< 被拒
+- ai                      '`/secret/plan.md` 被拒绝（permission denied）。改用 `/workspace/plan.md`。' <<< 被拒
+- tool       write_file   'Updated file /workspace/plan.md'
+- ai                      ''
+- tool       read_file    '1  内幕情报'
+- ai                      '结果如下：  1. **`/secret/plan.md` — 写入失败**，返回 `permission denied for write on /secret/plan.md`（权限拒绝，未做任何改动）。 2. **' <<< 被拒
+
+最终回答: 结果如下：
+
+1. **`/secret/plan.md` — 写入失败**，返回 `permission denied for write on /secret/plan.md`（权限拒绝，未做任何改动）。
+2. **`/workspace/plan.md` — 写入成功**，并已 read_file 读回确认，内容为一行：`内幕情报`（第 1 行）。
+3. **最终写入位置：`/workspace/plan.md`**。
+
+需要提醒一点：写入 `/workspace/plan.md` 时工具返回的是 "Updated file"，说明该文件原本已存在，而 `write_file` 是整体覆
+
+==== 实验2：interrupt /vault/** ====
+结果 keys: ['messages', 'files', '__interrupt__']
+[INTERRUPT] value={'action_requests': [{'name': 'ls', 'args': {'path': '/vault'}, 'description': "Tool execution requires approval\n\nTool: ls\nArgs: {'path': '/vault'}"}, {'name': 'ls', 'args': {'path': '/'}, 'description': "Tool execution requires approval\n\nTool: ls\nArgs: {'path': '/'}"}], 'review_configs': [{'a
+(恢复需要 checkpointer 保存现场；本地临时图参考教学指南 STEP 4 的完整版)
+
+[SAVED] lab4_evidence.json

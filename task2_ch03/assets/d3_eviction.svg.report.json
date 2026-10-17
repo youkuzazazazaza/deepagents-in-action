@@ -1,0 +1,11 @@
+{
+  "issues": [
+    {
+      "code": "LAYOUT_ERROR",
+      "message": "COMPOSITION_QUALITY: EDGE_BEND_BUDGET:f2=4>2; EDGE_MICRO_SEGMENT:f2=10.2>16.0; EDGE_BEND_BUDGET:f4=4>2; EDGE_ROUTE_STRETCH:f4=1.394>1.35; EDGE_MICRO_SEGMENT:f4=12.0>16.0; TOTAL_BEND_BUDGET:diagram=12>8; BRIDGE_BUDGET:diagram=1>0; NODE_GAP:ev1,ev2=30.0>40.0; NODE_GAP:ev2,ev3=30.0>40.0",
+      "severity": "error"
+    }
+  ],
+  "ok": false,
+  "schema_version": 1
+}

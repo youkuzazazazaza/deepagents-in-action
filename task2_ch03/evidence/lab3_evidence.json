@@ -1,0 +1,11 @@
+{
+ "A_truncated": true,
+ "A_tool_msg_lens": [
+  79965
+ ],
+ "B_evicted_msg": "Tool result too large, the result of this tool call call_00_fc0vhX13wxwNBwHrkGZM5052 was saved in the filesystem at this path: /large_tool_results/call_00_fc0vhX13wxwNBwHrkGZM5052\n\nYou can read the result from the filesystem by using the read_file tool, but make sure to only read part of the result at a time.\n\nYou can do this by specifying an offset and limit in the read_file tool call. For example, to read the first 100 lines, you can use the read_file tool with offset=0 and limit=100.\n\nHere is a preview showing the head and tail of the result (lines of the form `... [N lines truncated] ...` indicate omitted lines in the middle of the content):\n\n1  2026-10-15 12:00:00 INFO worker-0 job=00000 status=ok bytes=0\n2  2026-10-15 12:00:01 INFO worker-1 job=00001 status=ok bytes=37\n3  2026-10-15 ",
+ "B_eviction_files": {
+  "/large_tool_results/call_00_fc0vhX13wxwNBwHrkGZM5052": 4
+ },
+ "B_final": "\u6700\u540e\u4e00\u6761\u65e5\u5fd7\u7684 job \u7f16\u53f7\u662f **01999**\u3002\n\n- \u65e5\u5fd7\u5171 2000 \u884c,\u6700\u540e\u4e00\u884c(\u7b2c 2000 \u884c)\u5185\u5bb9\u4e3a:\n  `2026-10-15 12:00:19 INFO worker-7 job=01999 status=ok bytes=73963`\n- \u65e5\u5fd7\u8c03\u7528\u4e86 `get_server_log` \u83b7\u53d6,\u7ed3\u679c\u8fc7\u5927\u88ab\u8f6c\u5b58\u5230 `/large_tool_results/call_00_fc0vhX13wxwNBwHrkGZM5052`,\u6211\u8bfb\u53d6\u4e86\u6587\u4ef6\u672b\u5c3e\u786e\u8ba4\u7b2c 2000 \u884c\u5c31\u662f\u6700\u540e\u4e00\u884c,\u540e\u9762\u6ca1\u6709\u66f4\u591a\u5185\u5bb9\u3002"
+}

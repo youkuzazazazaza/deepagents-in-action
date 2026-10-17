@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" width="960" height="600" data-generator="fireworks-tech-graph" data-schema-version="1" data-text-metrics="heuristic-v1" data-style-id="1" data-visual-theme="Flat Icon" data-diagram-type="architecture" data-motion-scene="" data-semantic-profile="generic" data-semantic-valid="true" data-quality-profile="showcase" data-max-bends-per-edge="2" data-max-total-bends="8" data-max-route-stretch="1.35" data-max-bridged-crossings="0" data-min-node-gap="40.0" data-min-container-gutter="20.0" data-min-label-clearance="4.0" data-min-segment-length="16.0">
+  <defs>
+    <marker id="arrowA" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#7c3aed"/>
+    </marker>
+    <marker id="arrowB" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#10b981"/>
+    </marker>
+    <marker id="arrowC" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/>
+    </marker>
+    <marker id="arrowE" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f97316"/>
+    </marker>
+    <marker id="arrowF" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#7c3aed"/>
+    </marker>
+    <marker id="arrowG" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ef4444"/>
+    </marker>
+    <marker id="arrowH" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6b7280"/>
+    </marker>
+    <filter id="shadowSoft" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <filter id="shadowGlass" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#020617" flood-opacity="0.28"/>
+    </filter>
+    <style>
+    text { font-family: 'Helvetica Neue', Helvetica, Arial, 'PingFang SC', 'Noto Sans CJK SC', 'Microsoft YaHei', 'Microsoft JhengHei', 'SimHei', sans-serif; }
+    .title { font-size: 30px; font-weight: 700; fill: #111827; }
+    .subtitle { font-size: 14px; font-weight: 500; fill: #6b7280; }
+    .section { font-size: 13px; font-weight: 700; fill: #2563eb; letter-spacing: 1.4px; }
+    .section-sub { font-size: 12px; font-weight: 500; fill: #64748b; }
+    .node-title { font-weight: 700; fill: #111827; }
+    .node-sub { font-weight: 500; fill: #6b7280; }
+    .node-type { font-size: 12px; font-weight: 700; fill: #64748b; letter-spacing: 0.08em; }
+    .arrow-label { font-size: 12px; font-weight: 600; fill: #6b7280; }
+    .legend { font-size: 12px; font-weight: 500; fill: #6b7280; }
+    .footnote { font-size: 12px; font-weight: 500; fill: #64748b; }
+    .metric-label { font-size: 8.5px; font-weight: 700; fill: #64748b; text-transform: uppercase; }
+    .metric-value { font-size: 9.5px; font-weight: 700; fill: #111827; }
+    </style>
+  </defs>
+  <rect data-graph-role="background" width="960.0" height="600.0" fill="#ffffff"/>
+  <text x="480.0" y="56" text-anchor="middle" class="title">三种后端怎么选</text>
+  <text x="480.0" y="82" text-anchor="middle" class="subtitle">StateBackend 内存盘 / FilesystemBackend 真磁盘 / CompositeBackend 分区挂载</text>
+  <path id="b1" data-graph-role="edge" data-edge-id="b1" data-source="st" data-target="motto" data-edge-kind="flow" data-topic-id="" data-flow="control" data-motion-role="" data-motion-stage="" data-motion-order="" data-protocol="" data-via="" data-critical-path-id="" data-critical-hop="" data-critical-hops="" data-critical="false" data-bends="2" data-route-stretch="1.0" data-bridges="" d="M 190,240 L 190,264 L 462,264 L 462,380" fill="none" stroke="#7c3aed" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrowA)"/>
+  <path id="b2" data-graph-role="edge" data-edge-id="b2" data-source="fs" data-target="motto" data-edge-kind="flow" data-topic-id="" data-flow="control" data-motion-role="" data-motion-stage="" data-motion-order="" data-protocol="" data-via="" data-critical-path-id="" data-critical-hop="" data-critical-hops="" data-critical="false" data-bends="0" data-route-stretch="1.0" data-bridges="" d="M 480,240 L 480,380" fill="none" stroke="#7c3aed" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrowA)"/>
+  <path id="b3" data-graph-role="edge" data-edge-id="b3" data-source="cp" data-target="motto" data-edge-kind="flow" data-topic-id="" data-flow="control" data-motion-role="" data-motion-stage="" data-motion-order="" data-protocol="" data-via="" data-critical-path-id="" data-critical-hop="" data-critical-hops="" data-critical="false" data-bends="2" data-route-stretch="1.0" data-bridges="" d="M 770,240 L 770,264 L 498,264 L 498,380" fill="none" stroke="#7c3aed" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrowA)"/>
+  <g id="node-st" data-graph-role="node" data-node-id="st" data-semantic-role="database" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="70,130,310,240">
+  <rect x="70.0" y="130.0" width="240.0" height="110.0" rx="10.0" fill="#ffffff" stroke="#d1d5db" stroke-width="2.0" filter="url(#shadowSoft)"/>
+  <text data-text-role="title" data-full-text="StateBackend" data-text-max-width="216.0" x="190.0" y="185.0" text-anchor="middle" class="node-title" font-size="18">StateBackend</text>
+  <text data-text-role="subtitle" data-full-text="内存 dict, files 快照可序列化, 重启蒸发, 测试与子Agent隔离" data-text-max-width="216.0" x="190.0" y="207.0" text-anchor="middle" class="node-sub" font-size="10.5">内存 dict, files 快照可序列化, 重启蒸…</text>
+  </g>
+  <g id="node-fs" data-graph-role="node" data-node-id="fs" data-semantic-role="database" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="360,130,600,240">
+  <rect x="360.0" y="130.0" width="240.0" height="110.0" rx="10.0" fill="#ffffff" stroke="#d1d5db" stroke-width="2.0" filter="url(#shadowSoft)"/>
+  <text data-text-role="title" data-full-text="FilesystemBackend" data-text-max-width="216.0" x="480.0" y="185.0" text-anchor="middle" class="node-title" font-size="18">FilesystemBackend</text>
+  <text data-text-role="subtitle" data-full-text="真磁盘 root_dir, 进程重启保留, 多实例共享, 交付物落盘" data-text-max-width="216.0" x="480.0" y="207.0" text-anchor="middle" class="node-sub" font-size="10.5">真磁盘 root_dir, 进程重启保留, 多实例…</text>
+  </g>
+  <g id="node-cp" data-graph-role="node" data-node-id="cp" data-semantic-role="database" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="650,130,890,240">
+  <rect x="650.0" y="130.0" width="240.0" height="110.0" rx="10.0" fill="#ffffff" stroke="#d1d5db" stroke-width="2.0" filter="url(#shadowSoft)"/>
+  <text data-text-role="title" data-full-text="CompositeBackend" data-text-max-width="216.0" x="770.0" y="185.0" text-anchor="middle" class="node-title" font-size="18">CompositeBackend</text>
+  <text data-text-role="subtitle" data-full-text="routes 前缀挂载: /shared 真盘 + /workspace 内存" data-text-max-width="216.0" x="770.0" y="207.0" text-anchor="middle" class="node-sub" font-size="10.5">routes 前缀挂载: /shared 真盘 + /wo…</text>
+  </g>
+  <g id="node-motto" data-graph-role="node" data-node-id="motto" data-semantic-role="note" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="240,380,720,470">
+  <rect x="240.0" y="380.0" width="480.0" height="90.0" rx="10.0" fill="#ffffff" stroke="#d1d5db" stroke-width="2.0" filter="url(#shadowSoft)"/>
+  <text data-text-role="title" data-full-text="选型口诀" data-text-max-width="456.0" x="480.0" y="425.0" text-anchor="middle" class="node-title" font-size="18">选型口诀</text>
+  <text data-text-role="subtitle" data-full-text="要留痕上 FS, 要隔离用 State, 既要又要就 Composite" data-text-max-width="456.0" x="480.0" y="447.0" text-anchor="middle" class="node-sub" font-size="12">要留痕上 FS, 要隔离用 State, 既要又要就 Composite</text>
+  </g>
+</svg>

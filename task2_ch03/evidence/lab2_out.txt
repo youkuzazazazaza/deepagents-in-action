@@ -1,0 +1,37 @@
+==== A) Agent A（FilesystemBackend）====
+- human                   "用 write_file 把 '# 第3章实验\n文件真的落盘了吗？' 写入 /workspace/report.md，然后 read_file 读回来确认。"
+- ai                      '我先写入文件，然后读回来核对。'
+- tool       write_file   'Updated file /workspace/report.md'
+- ai                      ''
+- tool       read_file    '1  # 第3章实验\n2  文件真的落盘了吗？'
+- ai                      ''
+- tool       ls           "['/workspace/report.md']"
+- ai                      '是的，文件确实落盘了。\n\n**1. 写入**：`write_file` 返回 `Updated file /workspace/report.md`。\n\n**2'
+---- 磁盘真相（ls -la /root/ch03_labs/fsroot ）----
+total 12
+drwxr-xr-x 3 root root 4096 Oct 15 22:51 .
+drwxr-xr-x 8 root root 4096 Oct 15 22:51 ..
+drwxr-xr-x 2 root root 4096 Oct 15 22:51 workspace
+
+
+==== B) Agent B（另一个实例）====
+B 的最终回答: `/workspace/report.md` 的全部内容（共 2 行，原样如下）：
+
+```
+# 第3章实验
+文件真的落盘了吗？
+```
+
+即第一行是 `# 第3章实验`，第二行是 `文件真的落盘了吗？`。文件很短，没有其他内容。
+
+==== C) CompositeBackend 分区验证 ====
+Agent C 的 files: ['/workspace/draft.md']
+---- 磁盘真相 shared/ ----
+total 12
+drwxr-xr-x 2 root root 4096 Oct 15 22:51 .
+drwxr-xr-x 8 root root 4096 Oct 15 22:51 ..
+-rw-r--r-- 1 root root   18 Oct 15 22:51 notes.md
+
+预期：/shared/notes.md 在磁盘；/workspace/draft.md 只在内存（default=StateBackend）
+[SAVED] lab2_evidence.json
+DONE

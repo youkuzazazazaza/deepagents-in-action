@@ -1,0 +1,11 @@
+{
+  "issues": [
+    {
+      "code": "LAYOUT_ERROR",
+      "message": "COMPOSITION_QUALITY: EDGE_BEND_BUDGET:b1=4>2; EDGE_MICRO_SEGMENT:b3=7.0>16.0; EDGE_BEND_BUDGET:b4=3>2; TOTAL_BEND_BUDGET:diagram=11>8; BRIDGE_BUDGET:diagram=2>0; NODE_GAP:st,fs=20.0>40.0; NODE_GAP:fs,cp=20.0>40.0; NODE_GAP:sc1,sc2=32.0>40.0; NODE_GAP:sc2,sc3=32.0>40.0; NODE_GAP:w1,w2=30.0>40.0; CONTAINER_GUTTER:w1@pit=15.0>20.0; CONTAINER_GUTTER:w2@pit=15.0>20.0",
+      "severity": "error"
+    }
+  ],
+  "ok": false,
+  "schema_version": 1
+}

@@ -1,0 +1,118 @@
+{
+ "schema_version": 1,
+ "mode": "architecture",
+ "template_type": "architecture",
+ "style": 1,
+ "quality_profile": "showcase",
+ "width": 960,
+ "height": 560,
+ "title": "大结果治理：截断 vs 卸载",
+ "subtitle": "红线 80000 字符 = 20000 token x 4，两道闸门分工防洪",
+ "containers": [],
+ "nodes": [
+  {
+   "id": "tool_out",
+   "label": "工具返回大结果",
+   "sublabel": "如 cat 大日志 131696 字符",
+   "x": 60,
+   "y": 230,
+   "width": 180,
+   "height": 90,
+   "kind": "queue"
+  },
+  {
+   "id": "measure",
+   "label": "量长度",
+   "sublabel": "len > 80000 ?",
+   "x": 300,
+   "y": 230,
+   "width": 160,
+   "height": 90,
+   "kind": "decision"
+  },
+  {
+   "id": "gate_a",
+   "label": "闸门A 截断",
+   "sublabel": "read_file 就地截断\n附继续读提示",
+   "x": 540,
+   "y": 100,
+   "width": 180,
+   "height": 90,
+   "kind": "service"
+  },
+  {
+   "id": "gate_b",
+   "label": "闸门B 卸载",
+   "sublabel": "其它工具结果转存",
+   "x": 540,
+   "y": 370,
+   "width": 180,
+   "height": 90,
+   "kind": "service"
+  },
+  {
+   "id": "ev_t",
+   "label": "截断标记 True",
+   "sublabel": "79965 字符贴线",
+   "x": 800,
+   "y": 100,
+   "width": 150,
+   "height": 90,
+   "kind": "database"
+  },
+  {
+   "id": "ev_b",
+   "label": "取件条 1377 字符",
+   "sublabel": "/large_tool_results/call_xx\n头尾预览+分段取回",
+   "x": 790,
+   "y": 370,
+   "width": 140,
+   "height": 90,
+   "kind": "database"
+  }
+ ],
+ "arrows": [
+  {
+   "id": "f1",
+   "source": "tool_out",
+   "target": "measure",
+   "source_port": "right",
+   "target_port": "left",
+   "flow": "data"
+  },
+  {
+   "id": "f2",
+   "source": "measure",
+   "target": "gate_a",
+   "source_port": "top",
+   "target_port": "left",
+   "flow": "control",
+   "label": "是 read_file"
+  },
+  {
+   "id": "f3",
+   "source": "measure",
+   "target": "gate_b",
+   "source_port": "bottom",
+   "target_port": "left",
+   "flow": "control",
+   "label": "是其它工具"
+  },
+  {
+   "id": "f4",
+   "source": "gate_a",
+   "target": "ev_t",
+   "source_port": "right",
+   "target_port": "left",
+   "flow": "data"
+  },
+  {
+   "id": "f5",
+   "source": "gate_b",
+   "target": "ev_b",
+   "source_port": "right",
+   "target_port": "left",
+   "flow": "data"
+  }
+ ]
+}

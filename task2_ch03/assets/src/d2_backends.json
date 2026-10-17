@@ -1,0 +1,18 @@
+{
+  "schema_version": 1, "mode": "architecture", "template_type": "architecture", "style": 1, "quality_profile": "showcase",
+  "width": 960, "height": 600,
+  "title": "三种后端怎么选",
+  "subtitle": "StateBackend 内存盘 / FilesystemBackend 真磁盘 / CompositeBackend 分区挂载",
+  "containers": [],
+  "nodes": [
+    { "id": "st", "label": "StateBackend", "sublabel": "内存 dict, files 快照可序列化, 重启蒸发, 测试与子Agent隔离", "x": 70, "y": 130, "width": 240, "height": 110, "kind": "database" },
+    { "id": "fs", "label": "FilesystemBackend", "sublabel": "真磁盘 root_dir, 进程重启保留, 多实例共享, 交付物落盘", "x": 360, "y": 130, "width": 240, "height": 110, "kind": "database" },
+    { "id": "cp", "label": "CompositeBackend", "sublabel": "routes 前缀挂载: /shared 真盘 + /workspace 内存", "x": 650, "y": 130, "width": 240, "height": 110, "kind": "database" },
+    { "id": "motto", "label": "选型口诀", "sublabel": "要留痕上 FS, 要隔离用 State, 既要又要就 Composite", "x": 240, "y": 380, "width": 480, "height": 90, "kind": "note" }
+  ],
+  "arrows": [
+    { "id": "b1", "source": "st", "target": "motto", "source_port": "bottom", "target_port": "top", "flow": "control" },
+    { "id": "b2", "source": "fs", "target": "motto", "source_port": "bottom", "target_port": "top", "flow": "control" },
+    { "id": "b3", "source": "cp", "target": "motto", "source_port": "bottom", "target_port": "top", "flow": "control" }
+  ]
+}

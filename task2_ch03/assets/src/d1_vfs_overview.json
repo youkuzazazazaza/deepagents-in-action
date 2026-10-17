@@ -1,0 +1,98 @@
+{
+ "schema_version": 1,
+ "mode": "architecture",
+ "template_type": "architecture",
+ "style": 1,
+ "quality_profile": "showcase",
+ "width": 960,
+ "height": 620,
+ "title": "DeepAgents 虚拟文件系统全景",
+ "subtitle": "工具层 -> FilesystemMiddleware -> 存储后端 -> 磁盘",
+ "containers": [],
+ "nodes": [
+  {
+   "id": "t_all",
+   "label": "8 个文件工具",
+   "sublabel": "ls / read / write / edit / glob / grep\nexecute / task",
+   "x": 360,
+   "y": 130,
+   "width": 240,
+   "height": 90,
+   "kind": "actor"
+  },
+  {
+   "id": "mw",
+   "label": "FilesystemMiddleware",
+   "sublabel": "routes 前缀路由 -> backend\nfiles 视图 = 各挂载点拼盘\n大结果闸门 + 权限检查",
+   "x": 300,
+   "y": 270,
+   "width": 360,
+   "height": 110,
+   "kind": "service"
+  },
+  {
+   "id": "b_state",
+   "label": "StateBackend",
+   "sublabel": "内存 dict\n重启蒸发",
+   "x": 60,
+   "y": 450,
+   "width": 240,
+   "height": 90,
+   "kind": "database"
+  },
+  {
+   "id": "b_fs",
+   "label": "FilesystemBackend",
+   "sublabel": "真磁盘\n进程间可共享",
+   "x": 360,
+   "y": 450,
+   "width": 240,
+   "height": 90,
+   "kind": "database"
+  },
+  {
+   "id": "b_comp",
+   "label": "CompositeBackend",
+   "sublabel": "/memory->内存 /workspace->磁盘",
+   "x": 660,
+   "y": 450,
+   "width": 240,
+   "height": 90,
+   "kind": "database"
+  }
+ ],
+ "arrows": [
+  {
+   "id": "a1",
+   "source": "t_all",
+   "target": "mw",
+   "source_port": "bottom",
+   "target_port": "top",
+   "flow": "data"
+  },
+  {
+   "id": "a2",
+   "source": "mw",
+   "target": "b_state",
+   "source_port": "bottom",
+   "target_port": "top",
+   "flow": "write"
+  },
+  {
+   "id": "a3",
+   "source": "mw",
+   "target": "b_fs",
+   "source_port": "bottom",
+   "target_port": "top",
+   "flow": "write"
+  },
+  {
+   "id": "a4",
+   "source": "mw",
+   "target": "b_comp",
+   "source_port": "bottom",
+   "target_port": "top",
+   "flow": "write"
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+预置大文件 big.md：223999 字符（红线 80000）
+
+==== A) read_file 超限 → 就地截断 ====
+tool read_file      返回   79965 字符
+截断标记出现: True
+Agent 总结: 我实际只收到了 **1283 行**（不是 4000 行），文件内容止于 `LINE-01282`。
+
+末尾确实有英文截断提示，原文如下：
+
+> [Output was truncated due to size limits. The file content is very large. Consider reformatting the file ...]
+> [Read 1283 lines (lines 1-1283 of 4
+
+==== B) get_server_log 超限 → 卸载+预览 ====
+tool get_server_log 返回   1377 字符 ← 被卸载替换!
+tool read_file      返回    719 字符
+
+--- 替换后的提示语(前600字符) ---
+Tool result too large, the result of this tool call call_00_fc0vhX13wxwNBwHrkGZM5052 was saved in the filesystem at this path: /large_tool_results/call_00_fc0vhX13wxwNBwHrkGZM5052
+
+You can read the result from the filesystem by using the read_file tool, but make sure to only read part of the result at a time.
+
+You can do this by specifying an offset and limit in the read_file tool call. For example, to read the first 100 lines, you can use the read_file tool with offset=0 and limit=100.
+
+Here is a preview showing the head and tail of the result (lines of the form `... [N lines truncated] ...` 
+
+虚拟磁盘里多出来的卸载文件:
+  [file] /large_tool_results/call_00_fc0vhX13wxwNBwHrkGZM5052 (131696 chars)
+
+Agent 最终回答(能答对说明'按需读回'闭环成功): 最后一条日志的 job 编号是 **01999**。
+
+- 日志共 2000 行,最后一行(第 2000 行)内容为:
+  `2026-10-15 12:00:19 INFO worker-7 job=01999 status=ok bytes=73963`
+- 日志调用了 `get_server_log` 获取,结果过大被转存到 `/large_tool_results/call_00_fc0v
+
+[SAVED] lab3_evidence.json
+DONE

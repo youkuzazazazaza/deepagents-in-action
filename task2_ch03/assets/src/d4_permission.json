@@ -1,0 +1,21 @@
+{
+  "schema_version": 1, "mode": "architecture", "template_type": "architecture", "style": 1, "quality_profile": "showcase",
+  "width": 960, "height": 620,
+  "title": "权限系统：三元组规则与三种模式",
+  "subtitle": "规则 = (操作, 路径glob, 模式)，先匹配先生效",
+  "containers": [],
+  "nodes": [
+    { "id": "req", "label": "每次工具调用", "sublabel": "write /shared/a.md ?  execute rm ?", "x": 340, "y": 110, "width": 280, "height": 80, "kind": "queue" },
+    { "id": "match", "label": "规则匹配", "sublabel": "glob /secret/** 命中?", "x": 340, "y": 250, "width": 280, "height": 80, "kind": "decision" },
+    { "id": "m_allow", "label": "allow 放行", "sublabel": "正常执行", "x": 60, "y": 420, "width": 200, "height": 80, "kind": "service" },
+    { "id": "m_deny", "label": "deny 软拒绝", "sublabel": "报错可见, 可改道", "x": 380, "y": 420, "width": 200, "height": 80, "kind": "service" },
+    { "id": "m_int", "label": "interrupt 硬暂停", "sublabel": "__interrupt__ 等人拍板", "x": 700, "y": 420, "width": 200, "height": 80, "kind": "service" },
+    { "id": "note", "label": "易混口诀", "sublabel": "挂载 routes 认前缀, 权限 path 认通配", "x": 240, "y": 545, "width": 480, "height": 52, "kind": "note" }
+  ],
+  "arrows": [
+    { "id": "p1", "source": "req", "target": "match", "source_port": "bottom", "target_port": "top", "flow": "control" },
+    { "id": "p2", "source": "match", "target": "m_allow", "source_port": "left", "target_port": "top", "flow": "control" },
+    { "id": "p3", "source": "match", "target": "m_deny", "source_port": "bottom", "target_port": "top", "flow": "control" },
+    { "id": "p4", "source": "match", "target": "m_int", "source_port": "right", "target_port": "top", "flow": "control" }
+  ]
+}
