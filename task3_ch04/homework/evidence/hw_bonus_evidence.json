@@ -1,0 +1,153 @@
+{
+  "turns_snaps": [
+    {
+      "n_msgs": 0,
+      "n_todos": 0,
+      "todos": [],
+      "files": [
+        "orders.txt",
+        "promo.txt",
+        "shipping.txt"
+      ],
+      "first": "-"
+    },
+    {
+      "n_msgs": 6,
+      "n_todos": 3,
+      "todos": [
+        {
+          "content": "读取 orders.txt / promo.txt / shipping.txt",
+          "status": "completed"
+        },
+        {
+          "content": "去重订单号，计算总额/应付金额/运费",
+          "status": "completed"
+        },
+        {
+          "content": "写入 report.md（总额=X 应付金额=Y 运费=Z）",
+          "status": "completed"
+        }
+      ],
+      "files": [
+        "orders.txt",
+        "promo.txt",
+        "report.md",
+        "shipping.txt"
+      ],
+      "first": "HumanMessage"
+    },
+    {
+      "n_msgs": 10,
+      "n_todos": 3,
+      "todos": [
+        {
+          "content": "读取 orders.txt / promo.txt / shipping.txt",
+          "status": "completed"
+        },
+        {
+          "content": "去重订单号，计算总额/应付金额/运费",
+          "status": "completed"
+        },
+        {
+          "content": "写入 report.md（总额=X 应付金额=Y 运费=Z）",
+          "status": "completed"
+        }
+      ],
+      "files": [
+        "orders.txt",
+        "promo.txt",
+        "report.md",
+        "shipping.txt"
+      ],
+      "first": "HumanMessage"
+    },
+    {
+      "n_msgs": 8,
+      "n_todos": 3,
+      "todos": [
+        {
+          "content": "读取 orders.txt / promo.txt / shipping.txt",
+          "status": "completed"
+        },
+        {
+          "content": "去重订单号，计算总额/应付金额/运费",
+          "status": "completed"
+        },
+        {
+          "content": "写入 report.md（总额=X 应付金额=Y 运费=Z）",
+          "status": "completed"
+        }
+      ],
+      "files": [
+        "orders.txt",
+        "promo.txt",
+        "report.md",
+        "shipping.txt"
+      ],
+      "first": "HumanMessage"
+    },
+    {
+      "n_msgs": 6,
+      "n_todos": 3,
+      "todos": [
+        {
+          "content": "读取 orders.txt / promo.txt / shipping.txt",
+          "status": "completed"
+        },
+        {
+          "content": "去重订单号，计算总额/应付金额/运费",
+          "status": "completed"
+        },
+        {
+          "content": "写入 report.md（总额=X 应付金额=Y 运费=Z）",
+          "status": "completed"
+        }
+      ],
+      "files": [
+        "orders.txt",
+        "promo.txt",
+        "report.md",
+        "shipping.txt"
+      ],
+      "first": "HumanMessage"
+    },
+    {
+      "n_msgs": 8,
+      "n_todos": 3,
+      "todos": [
+        {
+          "content": "读取 orders.txt / promo.txt / shipping.txt",
+          "status": "completed"
+        },
+        {
+          "content": "去重订单号，计算总额/应付金额/运费",
+          "status": "completed"
+        },
+        {
+          "content": "写入 report.md（总额=X 应付金额=Y 运费=Z）",
+          "status": "completed"
+        }
+      ],
+      "files": [
+        "orders.txt",
+        "promo.txt",
+        "report.md",
+        "shipping.txt"
+      ],
+      "first": "HumanMessage"
+    }
+  ],
+  "report_ok": true,
+  "got": [
+    798.0,
+    768.0,
+    0.0
+  ],
+  "gt": {
+    "total": 798.0,
+    "payable": 768.0,
+    "shipping": 0.0
+  },
+  "a5_mentions_299": true,
+  "a5": "- **A001 金额：299.00 元**（商品：无线鼠标）\n- **总额：798.00 元**\n\n总额构成（订单号去重后各计一次）：\n\n| 订单号 | 商品 | 金额 |\n|---|---|---|\n| A001 | 无线鼠标 | 299.00 |\n| A002 | 机械键盘 | 159.50 |\n| A003 | 显示器支架 | 140.00 |\n| A004 | 鼠标垫 | 60.00 |\n| A005 | USB-C 扩展坞 | 139.50 |\n| **合计** | | **798.00** |\n\n（A003 在 `orders.txt` 中出现两行，按去重规则只计一次。）"
+}

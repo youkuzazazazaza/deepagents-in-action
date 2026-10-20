@@ -1,0 +1,98 @@
+{
+ "schema_version": 1,
+ "mode": "architecture",
+ "template_type": "architecture",
+ "style": 1,
+ "quality_profile": "showcase",
+ "width": 960,
+ "height": 640,
+ "title": "中间件改装 Agent 的两种方式",
+ "subtitle": "组装: create_agent(model, tools, middleware=[...]) | 改图型=加节点, 包裹型=改模型请求, 图上看不见不等于没干活",
+ "containers": [],
+ "nodes": [
+  {
+   "id": "sum",
+   "label": "SummarizationMiddleware",
+   "sublabel": "包裹模型型 (上)\nwrap_model_call 改请求\n图上完全看不见",
+   "x": 350,
+   "y": 90,
+   "width": 260,
+   "height": 110,
+   "kind": "service"
+  },
+  {
+   "id": "todo",
+   "label": "TodoListMiddleware",
+   "sublabel": "改图型 (左)\n+ after_model 节点\n+ write_todos 工具",
+   "x": 60,
+   "y": 265,
+   "width": 240,
+   "height": 110,
+   "kind": "service"
+  },
+  {
+   "id": "graph",
+   "label": "LangGraph 图",
+   "sublabel": "节点 = 工序\n__start__ / model /\ntools / __end__",
+   "x": 350,
+   "y": 265,
+   "width": 260,
+   "height": 110,
+   "kind": "service"
+  },
+  {
+   "id": "fs",
+   "label": "FilesystemMiddleware",
+   "sublabel": "只加工具型 (右)\n+ 8 个文件工具\n不加任何节点",
+   "x": 660,
+   "y": 265,
+   "width": 240,
+   "height": 110,
+   "kind": "service"
+  },
+  {
+   "id": "patch",
+   "label": "PatchToolCallsMiddleware",
+   "sublabel": "改图型 (下)\n+ before_agent 节点\n补悬空 tool_call 保险丝",
+   "x": 350,
+   "y": 450,
+   "width": 260,
+   "height": 110,
+   "kind": "service"
+  }
+ ],
+ "arrows": [
+  {
+   "id": "a1",
+   "source": "sum",
+   "target": "graph",
+   "source_port": "bottom",
+   "target_port": "top",
+   "flow": "control"
+  },
+  {
+   "id": "a2",
+   "source": "todo",
+   "target": "graph",
+   "source_port": "right",
+   "target_port": "left",
+   "flow": "control"
+  },
+  {
+   "id": "a3",
+   "source": "fs",
+   "target": "graph",
+   "source_port": "left",
+   "target_port": "right",
+   "flow": "data"
+  },
+  {
+   "id": "a4",
+   "source": "patch",
+   "target": "graph",
+   "source_port": "top",
+   "target_port": "bottom",
+   "flow": "control"
+  }
+ ]
+}

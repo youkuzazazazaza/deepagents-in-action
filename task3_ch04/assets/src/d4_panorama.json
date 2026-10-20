@@ -1,0 +1,80 @@
+{
+ "schema_version": 1,
+ "mode": "architecture",
+ "template_type": "architecture",
+ "style": 1,
+ "quality_profile": "showcase",
+ "width": 960,
+ "height": 620,
+ "title": "全家桶 vs 自选组装",
+ "subtitle": "create_deep_agent 开箱即用; create_agent 按需轻装, 但四个坑自己踩 (见 06_避坑清单)",
+ "containers": [],
+ "nodes": [
+  {
+   "id": "env",
+   "label": "实测环境",
+   "sublabel": "deepagents 0.7.8\nlangchain 1.4.3\nWSL python3.12",
+   "x": 40,
+   "y": 130,
+   "width": 150,
+   "height": 170,
+   "kind": "actor"
+  },
+  {
+   "id": "deep",
+   "label": "create_deep_agent() 全家桶",
+   "sublabel": "TodoList ✓   Filesystem ✓\nSummarization ✓   Patch ✓\nSubAgents ✓   Skills ✓\n开箱即用 · 官方替你踩完坑",
+   "x": 250,
+   "y": 130,
+   "width": 400,
+   "height": 170,
+   "kind": "service"
+  },
+  {
+   "id": "custom",
+   "label": "create_agent() 自选组装",
+   "sublabel": "按需挂载 · 图更轻 · 更省\n坑1 trigger 默认 None 装了不触发\n坑2 Sum 必须配 FS 否则空转\n坑3 Patch 藏在子模块 · 坑4 崩溃 400",
+   "x": 250,
+   "y": 390,
+   "width": 400,
+   "height": 170,
+   "kind": "service"
+  },
+  {
+   "id": "ev",
+   "label": "证据",
+   "sublabel": "evidence/\nlab1~lab4\n真实输出",
+   "x": 40,
+   "y": 390,
+   "width": 150,
+   "height": 170,
+   "kind": "actor"
+  }
+ ],
+ "arrows": [
+  {
+   "id": "a1",
+   "source": "env",
+   "target": "deep",
+   "source_port": "right",
+   "target_port": "left",
+   "flow": "control"
+  },
+  {
+   "id": "a2",
+   "source": "ev",
+   "target": "custom",
+   "source_port": "right",
+   "target_port": "left",
+   "flow": "control"
+  },
+  {
+   "id": "a3",
+   "source": "deep",
+   "target": "custom",
+   "source_port": "bottom",
+   "target_port": "top",
+   "flow": "data"
+  }
+ ]
+}

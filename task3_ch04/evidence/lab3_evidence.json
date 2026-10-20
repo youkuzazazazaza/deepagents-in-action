@@ -1,0 +1,47 @@
+{
+  "control_msg_counts": [
+    7,
+    14,
+    21
+  ],
+  "msg_track": [
+    [
+      "round1",
+      8
+    ],
+    [
+      "二号",
+      14
+    ],
+    [
+      "三号",
+      20
+    ],
+    [
+      "再来一次喊'",
+      24
+    ],
+    [
+      "喊'加班'",
+      28
+    ]
+  ],
+  "files_keys": [
+    "/conversation_history/session_da83b58269aa4882a9648a0eaedb8f02.md"
+  ],
+  "history_head": "## Summarized at 2026-10-15T15:19:40.303078+00:00\n\n<message type=\"human\">用 write_todos 建计划：1)喊'一号' 2)喊'二号' 3)喊'三号'，然后只做第1步。</message>\n<message type=\"ai\">\n  <tool_call id=\"call_00_DqL9cy8SOk5cvgwXncUn0105\" name=\"write_todos\">{\"todos\": [{\"content\": \"喊'一号'\", \"status\": \"in_progress\"}, {\"content\": \"喊'二号'\", \"status\": \"pending\"}, {\"content\": \"喊'三号'\", \"status\": \"pending\"}]}</tool_call>\n</message>\n<message type=\"tool\">Updated todo list to [{'content': \"喊'一号'\", 'status': 'in_progress'}, {'content': \"喊'二号'\", 'status': 'pending'}, {'content': \"喊'三号'\", 'status': 'pending'}]</message>\n<message type=\"ai\">\n  ",
+  "todos_after_summary": [
+    {
+      "content": "喊'一号'",
+      "status": "completed"
+    },
+    {
+      "content": "喊'二号'",
+      "status": "completed"
+    },
+    {
+      "content": "喊'三号'",
+      "status": "completed"
+    }
+  ]
+}

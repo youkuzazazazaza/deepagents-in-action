@@ -1,0 +1,76 @@
+{
+  "裸 agent（无保险丝）": {
+    "ok": false,
+    "err": "OpenAIInvalidRequestError: Error code: 400 - {'error': {'message': \"An assistant message with 'tool_calls' must be followed by tool messages responding to each 'tool_call_id'. (insufficient tool messages following tool_calls message) (request_id: fc0dcbf3-0535-4bcc-9c1a-05974ba6a69c)\", 'type': 'invalid_request_error', 'param'"
+  },
+  "+ PatchToolCallsMiddleware（有保险丝）": {
+    "ok": true,
+    "n_msgs": 5,
+    "patched_content": "Tool call shout with id call_dangling_1 was cancelled - another message came in before it could be completed."
+  },
+  "panorama": [
+    {
+      "middleware": "(空) 裸 create_agent",
+      "nodes": [
+        "__end__",
+        "__start__",
+        "model",
+        "tools"
+      ],
+      "extra_tools": []
+    },
+    {
+      "middleware": "TodoListMiddleware",
+      "nodes": [
+        "TodoListMiddleware.after_model",
+        "__end__",
+        "__start__",
+        "model",
+        "tools"
+      ],
+      "extra_tools": [
+        "write_todos"
+      ]
+    },
+    {
+      "middleware": "FilesystemMiddleware",
+      "nodes": [
+        "__end__",
+        "__start__",
+        "model",
+        "tools"
+      ],
+      "extra_tools": [
+        "ls",
+        "read_file",
+        "write_file",
+        "edit_file",
+        "delete",
+        "glob",
+        "grep",
+        "execute"
+      ]
+    },
+    {
+      "middleware": "SummarizationMiddleware(DA版)",
+      "nodes": [
+        "__end__",
+        "__start__",
+        "model",
+        "tools"
+      ],
+      "extra_tools": []
+    },
+    {
+      "middleware": "PatchToolCallsMiddleware",
+      "nodes": [
+        "PatchToolCallsMiddleware.before_agent",
+        "__end__",
+        "__start__",
+        "model",
+        "tools"
+      ],
+      "extra_tools": []
+    }
+  ]
+}

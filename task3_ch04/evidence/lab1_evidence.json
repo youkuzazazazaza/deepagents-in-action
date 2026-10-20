@@ -1,0 +1,40 @@
+[
+  {
+    "tag": "B1: 不加 TodoList（对照组）",
+    "tool_calls": [
+      "roll_dice",
+      "roll_dice"
+    ],
+    "todos": null,
+    "write_todos_count": 0,
+    "has_todos_state": false,
+    "final_head": "实验完成，结果如下：\n\n| 步骤 | 操作 | 结果 |\n|---|---|---|\n| 1 | 掷一次 6 面骰子 | **4** |\n| 2 | 再掷一次 6 面骰子 | **5** |\n| 3 | 汇总两次点数之和 | **4 + 5 = 9** |\n\n**最终结果：两次点数之和为 9。**\n\n补充说明：两次掷骰在概率上相互独立，因此我并行发起了这两次调用，不影响各自的随机性（每次都是 1~"
+  },
+  {
+    "tag": "B2: 加 TodoListMiddleware（实验组）",
+    "tool_calls": [
+      "write_todos",
+      "roll_dice",
+      "roll_dice",
+      "write_todos",
+      "write_todos"
+    ],
+    "todos": [
+      {
+        "content": "掷第一次6面骰子",
+        "status": "completed"
+      },
+      {
+        "content": "掷第二次6面骰子",
+        "status": "completed"
+      },
+      {
+        "content": "汇总两次点数之和",
+        "status": "completed"
+      }
+    ],
+    "write_todos_count": 3,
+    "has_todos_state": true,
+    "final_head": "实验完成：\n\n1. **第一次掷骰**：3 点\n2. **第二次掷骰**：3 点\n3. **两次点数之和**：3 + 3 = **6**\n\n结果：两次都是 3 点，合计 6 点。"
+  }
+]

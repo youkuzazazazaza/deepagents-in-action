@@ -1,0 +1,26 @@
+==== 实验一：不配 Checkpointer，连续 invoke 两次 ====
+  第1次 invoke 后 result['todos']: [{"content": "大声喊'早安'", "status": "completed"}, {"content": "大声喊'午安'", "status": "pending"}, {"content": "大声喊'晚安'", "status": "pending"}]
+  第2次 invoke 后 result['todos']: null
+  --> 没有记忆：第2次根本不记得有计划，todos 丢了
+
+==== 实验二：InMemorySaver + thread_id='user-001' ====
+  [同线程·第1轮后] todos状态快照: n_messages=8
+      - completed   大声喊'早安'
+      - pending     大声喊'午安'
+      - pending     大声喊'晚安'
+  [同线程·第2轮后] todos状态快照: n_messages=15
+      - completed   大声喊'早安'
+      - completed   大声喊'午安'
+      - completed   大声喊'晚安'
+==== 实验三：换 thread_id='user-002'（新会话） ====
+  [新线程·第1轮后] todos状态快照: n_messages=2
+      (无 todos)
+
+大白话总结：
+  1) Agent State 是"一次性"的：invoke 结束即丢（实验一）
+  2) Checkpointer 像存档机：把 messages + todos 一起存下来
+  3) thread_id 是存档槽位号：同一个号才能读同一个存档
+  4) 生产上用 SqliteSaver/PostgresSaver 替换 InMemorySaver，
+     重启进程也不丢（第8章细讲）
+
+证据已存 /root/ch04_labs/lab2_evidence.json

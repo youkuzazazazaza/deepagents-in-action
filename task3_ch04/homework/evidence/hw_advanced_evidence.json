@@ -1,0 +1,72 @@
+{
+  "task": "请核对订单并生成 /workspace/report.md：读 /workspace/orders.csv、/workspace/promo.txt、/workspace/shipping.txt，注意 order_id 重复的行只计一次；算出去重后订单总额、优惠后应付金额、运费三个数字写进报告，报告里三个数字各占一行，格式形如：总额=123.45。最后读回核对一遍。",
+  "ground_truth": {
+    "dedup": 798.0,
+    "payable": 768.0,
+    "shipping": 0.0
+  },
+  "round_off": {
+    "tag": "off",
+    "with_todo": false,
+    "tool_seq": [
+      "ls",
+      "read_file",
+      "read_file",
+      "read_file",
+      "write_file",
+      "read_file"
+    ],
+    "n_tool_calls": 6,
+    "n_messages": 12,
+    "n_write_todos": 0,
+    "tokens": {
+      "input_tokens": 4353,
+      "output_tokens": 831,
+      "total_tokens": 5184
+    },
+    "seconds": 7.2,
+    "report_numbers": [
+      798.0,
+      768.0,
+      0.0
+    ],
+    "correct": true,
+    "todos_final_status": []
+  },
+  "round_on": {
+    "tag": "on",
+    "with_todo": true,
+    "tool_seq": [
+      "ls",
+      "read_file",
+      "read_file",
+      "read_file",
+      "write_file",
+      "read_file"
+    ],
+    "n_tool_calls": 6,
+    "n_messages": 12,
+    "n_write_todos": 0,
+    "tokens": {
+      "input_tokens": 10961,
+      "output_tokens": 897,
+      "total_tokens": 11858
+    },
+    "seconds": 7.0,
+    "report_numbers": [
+      798.0,
+      768.0,
+      0.0
+    ],
+    "correct": true,
+    "todos_final_status": []
+  },
+  "delta": {
+    "tools": 0,
+    "tokens": 6674
+  },
+  "analysis": [
+    "B 轮一次 write_todos 都没调——中间件只给能力，用不用还是模型决定",
+    "两轮产物都对：这种 3 文件 + 1 产物的短任务，上下文根本不会长到'忘事'，规划的收益自然显示不出来"
+  ]
+}

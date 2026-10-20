@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" width="960" height="640" data-generator="fireworks-tech-graph" data-schema-version="1" data-text-metrics="heuristic-v1" data-style-id="1" data-visual-theme="Flat Icon" data-diagram-type="architecture" data-motion-scene="" data-semantic-profile="generic" data-semantic-valid="true" data-quality-profile="showcase" data-max-bends-per-edge="2" data-max-total-bends="8" data-max-route-stretch="1.35" data-max-bridged-crossings="0" data-min-node-gap="40.0" data-min-container-gutter="20.0" data-min-label-clearance="4.0" data-min-segment-length="16.0">
+  <defs>
+    <marker id="arrowA" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#7c3aed"/>
+    </marker>
+    <marker id="arrowB" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#10b981"/>
+    </marker>
+    <marker id="arrowC" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/>
+    </marker>
+    <marker id="arrowE" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f97316"/>
+    </marker>
+    <marker id="arrowF" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#7c3aed"/>
+    </marker>
+    <marker id="arrowG" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ef4444"/>
+    </marker>
+    <marker id="arrowH" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6b7280"/>
+    </marker>
+    <filter id="shadowSoft" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <filter id="shadowGlass" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#020617" flood-opacity="0.28"/>
+    </filter>
+    <style>
+    text { font-family: 'Helvetica Neue', Helvetica, Arial, 'PingFang SC', 'Noto Sans CJK SC', 'Microsoft YaHei', 'Microsoft JhengHei', 'SimHei', sans-serif; }
+    .title { font-size: 30px; font-weight: 700; fill: #111827; }
+    .subtitle { font-size: 14px; font-weight: 500; fill: #6b7280; }
+    .section { font-size: 13px; font-weight: 700; fill: #2563eb; letter-spacing: 1.4px; }
+    .section-sub { font-size: 12px; font-weight: 500; fill: #64748b; }
+    .node-title { font-weight: 700; fill: #111827; }
+    .node-sub { font-weight: 500; fill: #6b7280; }
+    .node-type { font-size: 12px; font-weight: 700; fill: #64748b; letter-spacing: 0.08em; }
+    .arrow-label { font-size: 12px; font-weight: 600; fill: #6b7280; }
+    .legend { font-size: 12px; font-weight: 500; fill: #6b7280; }
+    .footnote { font-size: 12px; font-weight: 500; fill: #64748b; }
+    .metric-label { font-size: 8.5px; font-weight: 700; fill: #64748b; text-transform: uppercase; }
+    .metric-value { font-size: 9.5px; font-weight: 700; fill: #111827; }
+    </style>
+  </defs>
+  <rect data-graph-role="background" width="960.0" height="640.0" fill="#ffffff"/>
+  <text x="480.0" y="56" text-anchor="middle" class="title">中间件改装 Agent 的两种方式</text>
+  <text x="480.0" y="82" text-anchor="middle" class="subtitle">组装: create_agent(model, tools, middleware=[...]) | 改图型=加节点, 包裹型=改模型请求, 图上看不见不等于没干活</text>
+  <path id="a1" data-graph-role="edge" data-edge-id="a1" data-source="sum" data-target="graph" data-edge-kind="flow" data-topic-id="" data-flow="control" data-motion-role="" data-motion-stage="" data-motion-order="" data-protocol="" data-via="" data-critical-path-id="" data-critical-hop="" data-critical-hops="" data-critical="false" data-bends="0" data-route-stretch="1.0" data-bridges="" d="M 480,200 L 480,265" fill="none" stroke="#7c3aed" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrowA)"/>
+  <path id="a2" data-graph-role="edge" data-edge-id="a2" data-source="todo" data-target="graph" data-edge-kind="flow" data-topic-id="" data-flow="control" data-motion-role="" data-motion-stage="" data-motion-order="" data-protocol="" data-via="" data-critical-path-id="" data-critical-hop="" data-critical-hops="" data-critical="false" data-bends="0" data-route-stretch="1.0" data-bridges="" d="M 300,320 L 350,320" fill="none" stroke="#7c3aed" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrowA)"/>
+  <path id="a3" data-graph-role="edge" data-edge-id="a3" data-source="fs" data-target="graph" data-edge-kind="flow" data-topic-id="" data-flow="data" data-motion-role="" data-motion-stage="" data-motion-order="" data-protocol="" data-via="" data-critical-path-id="" data-critical-hop="" data-critical-hops="" data-critical="false" data-bends="0" data-route-stretch="1.0" data-bridges="" d="M 660,320 L 610,320" fill="none" stroke="#f97316" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrowE)"/>
+  <path id="a4" data-graph-role="edge" data-edge-id="a4" data-source="patch" data-target="graph" data-edge-kind="flow" data-topic-id="" data-flow="control" data-motion-role="" data-motion-stage="" data-motion-order="" data-protocol="" data-via="" data-critical-path-id="" data-critical-hop="" data-critical-hops="" data-critical="false" data-bends="0" data-route-stretch="1.0" data-bridges="" d="M 480,450 L 480,375" fill="none" stroke="#7c3aed" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrowA)"/>
+  <g id="node-sum" data-graph-role="node" data-node-id="sum" data-semantic-role="service" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="350,90,610,200">
+  <rect x="350.0" y="90.0" width="260.0" height="110.0" rx="10.0" fill="#ffffff" stroke="#d1d5db" stroke-width="2.0" filter="url(#shadowSoft)"/>
+  <text data-text-role="title" data-full-text="SummarizationMiddleware" data-text-max-width="236.0" x="480.0" y="145.0" text-anchor="middle" class="node-title" font-size="17.42">SummarizationMiddleware</text>
+  <text data-text-role="subtitle" data-full-text="包裹模型型 (上)
+wrap_model_call 改请求
+图上完全看不见" data-text-max-width="236.0" x="480.0" y="167.0" text-anchor="middle" class="node-sub" font-size="10.5">包裹模型型 (上) wrap_model_call 改请求…</text>
+  </g>
+  <g id="node-todo" data-graph-role="node" data-node-id="todo" data-semantic-role="service" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="60,265,300,375">
+  <rect x="60.0" y="265.0" width="240.0" height="110.0" rx="10.0" fill="#ffffff" stroke="#d1d5db" stroke-width="2.0" filter="url(#shadowSoft)"/>
+  <text data-text-role="title" data-full-text="TodoListMiddleware" data-text-max-width="216.0" x="180.0" y="320.0" text-anchor="middle" class="node-title" font-size="18">TodoListMiddleware</text>
+  <text data-text-role="subtitle" data-full-text="改图型 (左)
++ after_model 节点
++ write_todos 工具" data-text-max-width="216.0" x="180.0" y="342.0" text-anchor="middle" class="node-sub" font-size="10.5">改图型 (左) + after_model 节点 + wri…</text>
+  </g>
+  <g id="node-graph" data-graph-role="node" data-node-id="graph" data-semantic-role="service" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="350,265,610,375">
+  <rect x="350.0" y="265.0" width="260.0" height="110.0" rx="10.0" fill="#ffffff" stroke="#d1d5db" stroke-width="2.0" filter="url(#shadowSoft)"/>
+  <text data-text-role="title" data-full-text="LangGraph 图" data-text-max-width="236.0" x="480.0" y="320.0" text-anchor="middle" class="node-title" font-size="18">LangGraph 图</text>
+  <text data-text-role="subtitle" data-full-text="节点 = 工序
+__start__ / model /
+tools / __end__" data-text-max-width="236.0" x="480.0" y="342.0" text-anchor="middle" class="node-sub" font-size="10.5">节点 = 工序 __start__ / model / tools /…</text>
+  </g>
+  <g id="node-fs" data-graph-role="node" data-node-id="fs" data-semantic-role="service" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="660,265,900,375">
+  <rect x="660.0" y="265.0" width="240.0" height="110.0" rx="10.0" fill="#ffffff" stroke="#d1d5db" stroke-width="2.0" filter="url(#shadowSoft)"/>
+  <text data-text-role="title" data-full-text="FilesystemMiddleware" data-text-max-width="216.0" x="780.0" y="320.0" text-anchor="middle" class="node-title" font-size="18">FilesystemMiddleware</text>
+  <text data-text-role="subtitle" data-full-text="只加工具型 (右)
++ 8 个文件工具
+不加任何节点" data-text-max-width="216.0" x="780.0" y="342.0" text-anchor="middle" class="node-sub" font-size="10.5">只加工具型 (右) + 8 个文件工具 不加任…</text>
+  </g>
+  <g id="node-patch" data-graph-role="node" data-node-id="patch" data-semantic-role="service" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="350,450,610,560">
+  <rect x="350.0" y="450.0" width="260.0" height="110.0" rx="10.0" fill="#ffffff" stroke="#d1d5db" stroke-width="2.0" filter="url(#shadowSoft)"/>
+  <text data-text-role="title" data-full-text="PatchToolCallsMiddleware" data-text-max-width="236.0" x="480.0" y="505.0" text-anchor="middle" class="node-title" font-size="16.99">PatchToolCallsMiddleware</text>
+  <text data-text-role="subtitle" data-full-text="改图型 (下)
++ before_agent 节点
+补悬空 tool_call 保险丝" data-text-max-width="236.0" x="480.0" y="527.0" text-anchor="middle" class="node-sub" font-size="10.5">改图型 (下) + before_agent 节点 补悬空…</text>
+  </g>
+</svg>

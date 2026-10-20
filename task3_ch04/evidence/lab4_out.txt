@@ -1,0 +1,31 @@
+==== 实验一：消息历史里有一条'悬空'的 tool_call ====
+[裸 agent（无保险丝）] 报错 ✗  OpenAIInvalidRequestError: Error code: 400 - {'error': {'message': "An assistant message with 'tool_calls' must be followed by tool messages responding to each 'tool_call_id'. (insufficie
+[+ PatchToolCallsMiddleware（有保险丝）] 正常返回 ✓
+   共 5 条消息; 悬空id的ToolMessage: 有,内容='Tool call shout with id call_dangling_1 was cancelled - ano
+
+==== 实验二：中间件全景表（各自带来什么） ====
+[(空) 裸 create_agent]
+   新增工具: (无)
+   图节点: ['__end__', '__start__', 'model', 'tools']
+[TodoListMiddleware]
+   新增工具: ['write_todos']
+   图节点: ['TodoListMiddleware.after_model', '__end__', '__start__', 'model', 'tools']
+[FilesystemMiddleware]
+   新增工具: ['ls', 'read_file', 'write_file', 'edit_file', 'delete', 'glob', 'grep', 'execute']
+   图节点: ['__end__', '__start__', 'model', 'tools']
+[SummarizationMiddleware(DA版)]
+   新增工具: (无)
+   图节点: ['__end__', '__start__', 'model', 'tools']
+[PatchToolCallsMiddleware]
+   新增工具: (无)
+   图节点: ['PatchToolCallsMiddleware.before_agent', '__end__', '__start__', 'model', 'tools']
+
+大白话总结：
+  1) 悬空 tool_call = 历史里的"烂尾楼"，模型看到会拒收（报错）
+  2) PatchToolCallsMiddleware 自动补 ToolMessage("中断")，把楼封顶
+  3) deepagents 全家桶默认带它；自己 create_agent 组装时要记得加
+  4) 全景表：TodoList→write_todos工具+after_model节点；
+     Filesystem→8个ls/cat/write...工具；Summarization→不改图结构
+     （藏在 model 调用的包裹层里）；Patch→before_agent节点
+
+证据已存 /root/ch04_labs/lab4_evidence.json

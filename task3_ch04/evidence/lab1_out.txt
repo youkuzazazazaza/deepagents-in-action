@@ -1,0 +1,49 @@
+==== A. 图节点对比（离线）====
+裸 create_agent          : ['__start__', 'model', '__end__']
++ TodoListMiddleware     : ['__start__', 'model', 'tools', 'TodoListMiddleware.after_model', '__end__']
+
+解读：
+  - 裸 agent 连 tools 节点都没有（没有工具可调用）
+  - 加 TodoList 后多出 tools 节点（write_todos 工具挂这儿）
+  - 还多出 TodoListMiddleware.after_model：模型每次说话后
+    它负责把 todos 状态同步进 Agent State
+
+==== B. B1: 不加 TodoList（对照组） ====
+    [工具执行] roll_dice(sides=6) -> 4
+    [工具执行] roll_dice(sides=6) -> 5
+  实际调用工具序列: ['roll_dice', 'roll_dice']
+  write_todos 被调用次数: 0
+  result['todos'] = None
+  最终回答(前120字): 实验完成，结果如下：
+
+| 步骤 | 操作 | 结果 |
+|---|---|---|
+| 1 | 掷一次 6 面骰子 | **4** |
+| 2 | 再掷一次 6 面骰子 | **5** |
+| 3 | 汇总两次点数之和 | **4 + 5
+
+==== B. B2: 加 TodoListMiddleware（实验组） ====
+    [工具执行] roll_dice(sides=6) -> 3
+    [工具执行] roll_dice(sides=6) -> 3
+  实际调用工具序列: ['write_todos', 'roll_dice', 'roll_dice', 'write_todos', 'write_todos']
+  write_todos 被调用次数: 3
+  result['todos'] = [{"content": "掷第一次6面骰子", "status": "completed"}, {"content": "掷第二次6面骰子", "status": "completed"}, {"content": "汇总两次点数之和", "status": "completed"}]
+  最终回答(前120字): 实验完成：
+
+1. **第一次掷骰**：3 点
+2. **第二次掷骰**：3 点
+3. **两次点数之和**：3 + 3 = **6**
+
+结果：两次都是 3 点，合计 6 点。
+
+==== C. 对照结论 ====
+[B1: 不加 TodoList（对照组）] 工具=['roll_dice', 'roll_dice'] | write_todos×0 | todos状态字段=无
+[B2: 加 TodoListMiddleware（实验组）] 工具=['write_todos', 'roll_dice', 'roll_dice', 'write_todos', 'write_todos'] | write_todos×3 | todos状态字段=有
+
+大白话总结：
+  - write_todos 是"外挂"不是"自带"：v0.7 里必须显式加 TodoListMiddleware
+  - todos 保存在 Agent State（图的独立字段），不是普通消息
+  - 三状态流转 pending → in_progress → completed 由模型自己维护
+  - 教学提醒：清单"画勾"不等于真做完，要对照产物检查
+
+证据已存 /root/ch04_labs/lab1_evidence.json

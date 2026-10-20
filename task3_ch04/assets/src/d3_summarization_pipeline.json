@@ -1,0 +1,120 @@
+{
+ "schema_version": 1,
+ "mode": "architecture",
+ "template_type": "architecture",
+ "style": 1,
+ "quality_profile": "showcase",
+ "width": 960,
+ "height": 740,
+ "title": "摘要与归档流水线 (0.7.8 实测)",
+ "subtitle": "wrap_model_call 懒触发: 先原样调用, 超过 trigger 才裁剪+归档+重试; 无 Filesystem 搭档则静默罢工",
+ "containers": [],
+ "nodes": [
+  {
+   "id": "msgs",
+   "label": "messages 历史",
+   "sublabel": "无人治理时:\n7 -> 14 -> 21 线性暴涨",
+   "x": 360,
+   "y": 110,
+   "width": 240,
+   "height": 90,
+   "kind": "actor"
+  },
+  {
+   "id": "wrap",
+   "label": "SummarizationMiddleware",
+   "sublabel": "wrap_model_call 包住模型\ntrigger=(messages,10)?",
+   "x": 360,
+   "y": 270,
+   "width": 240,
+   "height": 110,
+   "kind": "service"
+  },
+  {
+   "id": "keep",
+   "label": "触发: 裁剪请求",
+   "sublabel": "摘要 + keep 最近 N 条原文\n-> 重试模型调用 (省 token)",
+   "x": 360,
+   "y": 450,
+   "width": 240,
+   "height": 100,
+   "kind": "service"
+  },
+  {
+   "id": "archive",
+   "label": "backend 原文归档",
+   "sublabel": "/conversation_history/\nsession_xx.md (Summarized at)",
+   "x": 360,
+   "y": 610,
+   "width": 240,
+   "height": 90,
+   "kind": "database"
+  },
+  {
+   "id": "fs",
+   "label": "FilesystemMiddleware",
+   "sublabel": "提供 files 状态\nSum 的必备搭档",
+   "x": 660,
+   "y": 270,
+   "width": 240,
+   "height": 110,
+   "kind": "service"
+  },
+  {
+   "id": "warn",
+   "label": "无 FS 时: 静默罢工",
+   "sublabel": "KeyError: 'files'\n警告 Older messages will\nnot be recoverable 后放弃",
+   "x": 60,
+   "y": 450,
+   "width": 240,
+   "height": 100,
+   "kind": "actor"
+  }
+ ],
+ "arrows": [
+  {
+   "id": "a1",
+   "source": "msgs",
+   "target": "wrap",
+   "source_port": "bottom",
+   "target_port": "top",
+   "flow": "data"
+  },
+  {
+   "id": "a2",
+   "source": "wrap",
+   "target": "keep",
+   "source_port": "bottom",
+   "target_port": "top",
+   "flow": "control",
+   "label": "是"
+  },
+  {
+   "id": "a3",
+   "source": "keep",
+   "target": "archive",
+   "source_port": "bottom",
+   "target_port": "top",
+   "flow": "write",
+   "label": "原文归档"
+  },
+  {
+   "id": "a4",
+   "source": "fs",
+   "target": "wrap",
+   "source_port": "left",
+   "target_port": "right",
+   "flow": "control",
+   "label": "依赖"
+  },
+  {
+   "id": "a5",
+   "source": "wrap",
+   "target": "warn",
+   "source_port": "left",
+   "target_port": "right",
+   "flow": "error",
+   "label": "归档失败"
+  }
+ ]
+}

@@ -1,0 +1,25 @@
+==== 对照组：只有 TodoList，没有摘要中间件 ====
+  消息数逐轮增长: [7, 14, 21]
+  --> 没人管聊天记录，只会越滚越长
+
+==== 实验组：手动组装三件套，trigger=('messages', 10) ====
+  消息数轨迹: [('round1', 8), ('二号', 14), ('三号', 20), ("再来一次喊'", 24), ("喊'加班'", 28)]
+  峰值 28 条 → 最终 28 条（未触发？）
+  Backend 里的文件: ['/conversation_history/session_da83b58269aa4882a9648a0eaedb8f02.md']
+  找到历史存档: /conversation_history/session_da83b58269aa4882a9648a0eaedb8f02.md（前300字）
+  ## Summarized at 2026-10-15T15:19:40.303078+00:00
+  
+  <message type="human">用 write_todos 建计划：1)喊'一号' 2)喊'二号' 3)喊'三号'，然后只做第1步。</message>
+  <message type="ai">
+    <tool_call id="call_00_DqL9cy8SOk5cvgwXncUn0105" name="write_todos">{"todos": [{"content": "喊'一号'", "status": "in_progress"}, {"content": "喊'二号'
+
+  压缩后 todos: [{"content": "喊'一号'", "status": "completed"}, {"content": "喊'二号'", "status": "completed"}, {"content": "喊'三号'", "status": "completed"}]
+  --> 摘要只动 messages，todos 是独立字段，稳如泰山
+
+大白话总结：
+  1) DA 版摘要必须手动传 backend + 设 trigger（默认 None=装了不干活）
+  2) 触发后旧消息被摘要替换，原文写进 Backend 文件（conversation_history）
+  3) todos 是独立状态字段，摘要吃不掉它——长任务里它是"定海神针"
+  4) keep=('messages',2) 表示最后2条原样保留
+
+证据已存 /root/ch04_labs/lab3_evidence.json

@@ -1,0 +1,62 @@
+{
+  "rounds": [
+    {
+      "tag": "同线程·第1轮后",
+      "todos": [
+        {
+          "content": "大声喊'早安'",
+          "status": "completed"
+        },
+        {
+          "content": "大声喊'午安'",
+          "status": "pending"
+        },
+        {
+          "content": "大声喊'晚安'",
+          "status": "pending"
+        }
+      ],
+      "n_messages": 8
+    },
+    {
+      "tag": "同线程·第2轮后",
+      "todos": [
+        {
+          "content": "大声喊'早安'",
+          "status": "completed"
+        },
+        {
+          "content": "大声喊'午安'",
+          "status": "completed"
+        },
+        {
+          "content": "大声喊'晚安'",
+          "status": "completed"
+        }
+      ],
+      "n_messages": 15
+    },
+    {
+      "tag": "新线程·第1轮后",
+      "todos": null,
+      "n_messages": 2
+    }
+  ],
+  "no_checkpointer": {
+    "first": [
+      {
+        "content": "大声喊'早安'",
+        "status": "completed"
+      },
+      {
+        "content": "大声喊'午安'",
+        "status": "pending"
+      },
+      {
+        "content": "大声喊'晚安'",
+        "status": "pending"
+      }
+    ],
+    "second": null
+  }
+}

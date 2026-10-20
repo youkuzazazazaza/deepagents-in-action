@@ -1,0 +1,94 @@
+{
+  "task": "帮我完成一份学员小卡，共3步：\n1) 查小明和小红的分数；\n2) 算两人的平均分；\n3) 用一段话总结两位学员的表现（分数要写进总结里）。\n开工前请先用 write_todos 把这3步列成计划；每完成一步就更新一次清单状态，全部做完再回答。",
+  "tool_seq": [
+    "write_todos",
+    "lookup_score",
+    "lookup_score",
+    "write_todos",
+    "average",
+    "write_todos",
+    "write_todos"
+  ],
+  "todos_snapshots": [
+    [
+      {
+        "content": "查小明和小红的分数",
+        "status": "in_progress"
+      },
+      {
+        "content": "算两人的平均分",
+        "status": "pending"
+      },
+      {
+        "content": "用一段话总结两位学员的表现（分数要写进总结里）",
+        "status": "pending"
+      }
+    ],
+    [
+      {
+        "content": "查小明和小红的分数",
+        "status": "completed"
+      },
+      {
+        "content": "算两人的平均分",
+        "status": "in_progress"
+      },
+      {
+        "content": "用一段话总结两位学员的表现（分数要写进总结里）",
+        "status": "pending"
+      }
+    ],
+    [
+      {
+        "content": "查小明和小红的分数",
+        "status": "completed"
+      },
+      {
+        "content": "算两人的平均分",
+        "status": "completed"
+      },
+      {
+        "content": "用一段话总结两位学员的表现（分数要写进总结里）",
+        "status": "in_progress"
+      }
+    ],
+    [
+      {
+        "content": "查小明和小红的分数",
+        "status": "completed"
+      },
+      {
+        "content": "算两人的平均分",
+        "status": "completed"
+      },
+      {
+        "content": "用一段话总结两位学员的表现（分数要写进总结里）",
+        "status": "completed"
+      }
+    ]
+  ],
+  "final_todos": [
+    {
+      "content": "查小明和小红的分数",
+      "status": "completed"
+    },
+    {
+      "content": "算两人的平均分",
+      "status": "completed"
+    },
+    {
+      "content": "用一段话总结两位学员的表现（分数要写进总结里）",
+      "status": "completed"
+    }
+  ],
+  "final_answer_head": "# 学员小卡\n\n**分数查询结果：** 小明 86 分，小红 92 分\n**两人平均分：** 89.0 分\n\n**表现总结：** 本阶段两位学员整体表现扎实，小明取得 86 分、小红取得 92 分，两人平均 89.0 分，均处于良好水平。其中小红发挥更为突出，成绩位列两人之首，说明其对知识点的掌握更加牢固、答题稳定性更高；小明成绩同样稳健，与小红相差 6 分，仍有进一步提升的空间。建议后续在保持现有良好状态的基础上，由小红带动、小明补强薄弱环节，争取两人成绩同步向上。",
+  "check": {
+    "write_todos_called": true,
+    "saw_pending": true,
+    "saw_in_progress": true,
+    "saw_completed": true,
+    "final_all_completed": true,
+    "lookup_x2": true,
+    "average_x1": true
+  }
+}

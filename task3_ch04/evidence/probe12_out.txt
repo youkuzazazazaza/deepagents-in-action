@@ -1,0 +1,77 @@
+Exception offloading conversation history to /conversation_history/session_3a2addfebc234624a52f9713d2285e90.md (5 messages): KeyError: 'files'
+Offloading conversation history to backend failed during summarization. Older messages will not be recoverable.
+/root/research_deepagent/.venv/lib/python3.12/site-packages/langsmith/run_helpers.py:849: UserWarning: Offloading conversation history to backend failed during summarization. Older messages will not be recoverable.
+  function_result = run_container["context"].run(
+--- 第1轮后: 8 条 ---
+  [0] human        "用write_todos建计划:1)喊'甲' 2)喊'乙' 3)喊'丙'，然后只做第1步。"
+  [1] ai           '' tool_calls=write_todos
+  [2] tool         'Updated todo list to [{\'content\': "喊\'甲\'", \'status\': \'in_progress\'}, {\'' tool=write_todos
+  [3] ai           '' tool_calls=shout
+  [4] tool         '甲!' tool=shout
+  [5] ai           '' tool_calls=write_todos
+  [6] tool         'Updated todo list to [{\'content\': "喊\'甲\'", \'status\': \'completed\'}, {\'co' tool=write_todos
+  [7] ai           "计划已建好，第 1 步也已执行完毕：  | 步骤 | 内容 | 状态 | |---|---|---| | 1 | 喊'甲' | ✅ 已完成（"
+  todos: [("喊'甲'", 'completed'), ("喊'乙'", 'pending'), ("喊'丙'", 'pending')]
+Exception offloading conversation history to /conversation_history/session_931cd35cd2cc49f288bae88b536d3a10.md (7 messages): KeyError: 'files'
+Offloading conversation history to backend failed during summarization. Older messages will not be recoverable.
+/root/research_deepagent/.venv/lib/python3.12/site-packages/langsmith/run_helpers.py:849: UserWarning: Offloading conversation history to backend failed during summarization. Older messages will not be recoverable.
+  function_result = run_container["context"].run(
+Exception offloading conversation history to /conversation_history/session_931cd35cd2cc49f288bae88b536d3a10.md (4 messages): KeyError: 'files'
+Offloading conversation history to backend failed during summarization. Older messages will not be recoverable.
+/root/research_deepagent/.venv/lib/python3.12/site-packages/langsmith/run_helpers.py:849: UserWarning: Offloading conversation history to backend failed during summarization. Older messages will not be recoverable.
+  function_result = run_container["context"].run(
+--- 第2轮后: 16 条 ---
+  [0] human        "用write_todos建计划:1)喊'甲' 2)喊'乙' 3)喊'丙'，然后只做第1步。"
+  [1] ai           '' tool_calls=write_todos
+  [2] tool         'Updated todo list to [{\'content\': "喊\'甲\'", \'status\': \'in_progress\'}, {\'' tool=write_todos
+  [3] ai           '' tool_calls=shout
+  [4] tool         '甲!' tool=shout
+  [5] ai           '' tool_calls=write_todos
+  [6] tool         'Updated todo list to [{\'content\': "喊\'甲\'", \'status\': \'completed\'}, {\'co' tool=write_todos
+  [7] ai           "计划已建好，第 1 步也已执行完毕：  | 步骤 | 内容 | 状态 | |---|---|---| | 1 | 喊'甲' | ✅ 已完成（"
+  [8] human        '做第2步。'
+  [9] ai           '' tool_calls=write_todos
+  [10] tool         'Updated todo list to [{\'content\': "喊\'甲\'", \'status\': \'completed\'}, {\'co' tool=write_todos
+  [11] ai           '' tool_calls=shout
+  [12] tool         '乙!' tool=shout
+  [13] ai           '' tool_calls=write_todos
+  [14] tool         'Updated todo list to [{\'content\': "喊\'甲\'", \'status\': \'completed\'}, {\'co' tool=write_todos
+  [15] ai           "第2步已完成。  - 执行动作：调用 `shout` 工具，输出 `乙!` - 待办清单状态：   1. 喊'甲' — 已完成   2. 喊"
+  todos: [("喊'甲'", 'completed'), ("喊'乙'", 'completed'), ("喊'丙'", 'pending')]
+Exception offloading conversation history to /conversation_history/session_c35e6edb89154a938702980de21d4a84.md (15 messages): KeyError: 'files'
+Offloading conversation history to backend failed during summarization. Older messages will not be recoverable.
+/root/research_deepagent/.venv/lib/python3.12/site-packages/langsmith/run_helpers.py:849: UserWarning: Offloading conversation history to backend failed during summarization. Older messages will not be recoverable.
+  function_result = run_container["context"].run(
+Exception offloading conversation history to /conversation_history/session_c35e6edb89154a938702980de21d4a84.md (2 messages): KeyError: 'files'
+Offloading conversation history to backend failed during summarization. Older messages will not be recoverable.
+/root/research_deepagent/.venv/lib/python3.12/site-packages/langsmith/run_helpers.py:849: UserWarning: Offloading conversation history to backend failed during summarization. Older messages will not be recoverable.
+  function_result = run_container["context"].run(
+Exception offloading conversation history to /conversation_history/session_c35e6edb89154a938702980de21d4a84.md (3 messages): KeyError: 'files'
+Offloading conversation history to backend failed during summarization. Older messages will not be recoverable.
+/root/research_deepagent/.venv/lib/python3.12/site-packages/langsmith/run_helpers.py:849: UserWarning: Offloading conversation history to backend failed during summarization. Older messages will not be recoverable.
+  function_result = run_container["context"].run(
+--- 第3轮后: 23 条 ---
+  [0] human        "用write_todos建计划:1)喊'甲' 2)喊'乙' 3)喊'丙'，然后只做第1步。"
+  [1] ai           '' tool_calls=write_todos
+  [2] tool         'Updated todo list to [{\'content\': "喊\'甲\'", \'status\': \'in_progress\'}, {\'' tool=write_todos
+  [3] ai           '' tool_calls=shout
+  [4] tool         '甲!' tool=shout
+  [5] ai           '' tool_calls=write_todos
+  [6] tool         'Updated todo list to [{\'content\': "喊\'甲\'", \'status\': \'completed\'}, {\'co' tool=write_todos
+  [7] ai           "计划已建好，第 1 步也已执行完毕：  | 步骤 | 内容 | 状态 | |---|---|---| | 1 | 喊'甲' | ✅ 已完成（"
+  [8] human        '做第2步。'
+  [9] ai           '' tool_calls=write_todos
+  [10] tool         'Updated todo list to [{\'content\': "喊\'甲\'", \'status\': \'completed\'}, {\'co' tool=write_todos
+  [11] ai           '' tool_calls=shout
+  [12] tool         '乙!' tool=shout
+  [13] ai           '' tool_calls=write_todos
+  [14] tool         'Updated todo list to [{\'content\': "喊\'甲\'", \'status\': \'completed\'}, {\'co' tool=write_todos
+  [15] ai           "第2步已完成。  - 执行动作：调用 `shout` 工具，输出 `乙!` - 待办清单状态：   1. 喊'甲' — 已完成   2. 喊"
+  [16] human        '做第3步。'
+  [17] ai           '' tool_calls=write_todos,shout
+  [18] tool         'Updated todo list to [{\'content\': "喊\'甲\'", \'status\': \'completed\'}, {\'co' tool=write_todos
+  [19] tool         '丙!' tool=shout
+  [20] ai           '' tool_calls=write_todos
+  [21] tool         'Updated todo list to [{\'content\': "喊\'甲\'", \'status\': \'completed\'}, {\'co' tool=write_todos
+  [22] ai           "三步全部完成 ✅  - 喊'甲' — ✅ completed（输出：甲！） - 喊'乙' — ✅ completed（输出：乙！） - 喊'"
+  todos: [("喊'甲'", 'completed'), ("喊'乙'", 'completed'), ("喊'丙'", 'completed')]

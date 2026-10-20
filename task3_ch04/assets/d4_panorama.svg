@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" width="960" height="620" data-generator="fireworks-tech-graph" data-schema-version="1" data-text-metrics="heuristic-v1" data-style-id="1" data-visual-theme="Flat Icon" data-diagram-type="architecture" data-motion-scene="" data-semantic-profile="generic" data-semantic-valid="true" data-quality-profile="showcase" data-max-bends-per-edge="2" data-max-total-bends="8" data-max-route-stretch="1.35" data-max-bridged-crossings="0" data-min-node-gap="40.0" data-min-container-gutter="20.0" data-min-label-clearance="4.0" data-min-segment-length="16.0">
+  <defs>
+    <marker id="arrowA" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#7c3aed"/>
+    </marker>
+    <marker id="arrowB" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#10b981"/>
+    </marker>
+    <marker id="arrowC" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/>
+    </marker>
+    <marker id="arrowE" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f97316"/>
+    </marker>
+    <marker id="arrowF" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#7c3aed"/>
+    </marker>
+    <marker id="arrowG" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ef4444"/>
+    </marker>
+    <marker id="arrowH" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6b7280"/>
+    </marker>
+    <filter id="shadowSoft" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <filter id="shadowGlass" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#020617" flood-opacity="0.28"/>
+    </filter>
+    <style>
+    text { font-family: 'Helvetica Neue', Helvetica, Arial, 'PingFang SC', 'Noto Sans CJK SC', 'Microsoft YaHei', 'Microsoft JhengHei', 'SimHei', sans-serif; }
+    .title { font-size: 30px; font-weight: 700; fill: #111827; }
+    .subtitle { font-size: 14px; font-weight: 500; fill: #6b7280; }
+    .section { font-size: 13px; font-weight: 700; fill: #2563eb; letter-spacing: 1.4px; }
+    .section-sub { font-size: 12px; font-weight: 500; fill: #64748b; }
+    .node-title { font-weight: 700; fill: #111827; }
+    .node-sub { font-weight: 500; fill: #6b7280; }
+    .node-type { font-size: 12px; font-weight: 700; fill: #64748b; letter-spacing: 0.08em; }
+    .arrow-label { font-size: 12px; font-weight: 600; fill: #6b7280; }
+    .legend { font-size: 12px; font-weight: 500; fill: #6b7280; }
+    .footnote { font-size: 12px; font-weight: 500; fill: #64748b; }
+    .metric-label { font-size: 8.5px; font-weight: 700; fill: #64748b; text-transform: uppercase; }
+    .metric-value { font-size: 9.5px; font-weight: 700; fill: #111827; }
+    </style>
+  </defs>
+  <rect data-graph-role="background" width="960.0" height="620.0" fill="#ffffff"/>
+  <text x="480.0" y="56" text-anchor="middle" class="title">全家桶 vs 自选组装</text>
+  <text x="480.0" y="82" text-anchor="middle" class="subtitle">create_deep_agent 开箱即用; create_agent 按需轻装, 但四个坑自己踩 (见 06_避坑清单)</text>
+  <path id="a1" data-graph-role="edge" data-edge-id="a1" data-source="env" data-target="deep" data-edge-kind="flow" data-topic-id="" data-flow="control" data-motion-role="" data-motion-stage="" data-motion-order="" data-protocol="" data-via="" data-critical-path-id="" data-critical-hop="" data-critical-hops="" data-critical="false" data-bends="0" data-route-stretch="1.0" data-bridges="" d="M 190,215 L 250,215" fill="none" stroke="#7c3aed" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrowA)"/>
+  <path id="a2" data-graph-role="edge" data-edge-id="a2" data-source="ev" data-target="custom" data-edge-kind="flow" data-topic-id="" data-flow="control" data-motion-role="" data-motion-stage="" data-motion-order="" data-protocol="" data-via="" data-critical-path-id="" data-critical-hop="" data-critical-hops="" data-critical="false" data-bends="0" data-route-stretch="1.0" data-bridges="" d="M 190,475 L 250,475" fill="none" stroke="#7c3aed" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrowA)"/>
+  <path id="a3" data-graph-role="edge" data-edge-id="a3" data-source="deep" data-target="custom" data-edge-kind="flow" data-topic-id="" data-flow="data" data-motion-role="" data-motion-stage="" data-motion-order="" data-protocol="" data-via="" data-critical-path-id="" data-critical-hop="" data-critical-hops="" data-critical="false" data-bends="0" data-route-stretch="1.0" data-bridges="" d="M 450,300 L 450,390" fill="none" stroke="#f97316" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrowE)"/>
+  <g id="node-env" data-graph-role="node" data-node-id="env" data-semantic-role="actor" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="40,130,190,300">
+  <rect x="40.0" y="130.0" width="150.0" height="170.0" rx="10.0" fill="#ffffff" stroke="#d1d5db" stroke-width="2.0" filter="url(#shadowSoft)"/>
+  <text data-text-role="title" data-full-text="实测环境" data-text-max-width="126.0" x="115.0" y="215.0" text-anchor="middle" class="node-title" font-size="18">实测环境</text>
+  <text data-text-role="subtitle" data-full-text="deepagents 0.7.8
+langchain 1.4.3
+WSL python3.12" data-text-max-width="126.0" x="115.0" y="237.0" text-anchor="middle" class="node-sub" font-size="10.5">deepagents 0.7.8 lan…</text>
+  </g>
+  <g id="node-deep" data-graph-role="node" data-node-id="deep" data-semantic-role="service" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="250,130,650,300">
+  <rect x="250.0" y="130.0" width="400.0" height="170.0" rx="10.0" fill="#ffffff" stroke="#d1d5db" stroke-width="2.0" filter="url(#shadowSoft)"/>
+  <text data-text-role="title" data-full-text="create_deep_agent() 全家桶" data-text-max-width="376.0" x="450.0" y="215.0" text-anchor="middle" class="node-title" font-size="18">create_deep_agent() 全家桶</text>
+  <text data-text-role="subtitle" data-full-text="TodoList ✓   Filesystem ✓
+Summarization ✓   Patch ✓
+SubAgents ✓   Skills ✓
+开箱即用 · 官方替你踩完坑" data-text-max-width="376.0" x="450.0" y="237.0" text-anchor="middle" class="node-sub" font-size="10.5">TodoList ✓ Filesystem ✓ Summarization ✓ Patch ✓ SubAgents ✓ Sk…</text>
+  </g>
+  <g id="node-custom" data-graph-role="node" data-node-id="custom" data-semantic-role="service" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="250,390,650,560">
+  <rect x="250.0" y="390.0" width="400.0" height="170.0" rx="10.0" fill="#ffffff" stroke="#d1d5db" stroke-width="2.0" filter="url(#shadowSoft)"/>
+  <text data-text-role="title" data-full-text="create_agent() 自选组装" data-text-max-width="376.0" x="450.0" y="475.0" text-anchor="middle" class="node-title" font-size="18">create_agent() 自选组装</text>
+  <text data-text-role="subtitle" data-full-text="按需挂载 · 图更轻 · 更省
+坑1 trigger 默认 None 装了不触发
+坑2 Sum 必须配 FS 否则空转
+坑3 Patch 藏在子模块 · 坑4 崩溃 400" data-text-max-width="376.0" x="450.0" y="497.0" text-anchor="middle" class="node-sub" font-size="10.5">按需挂载 · 图更轻 · 更省 坑1 trigger 默认 None 装了不触发 坑2 Sum…</text>
+  </g>
+  <g id="node-ev" data-graph-role="node" data-node-id="ev" data-semantic-role="actor" data-motion-role="" data-motion-stage="" data-motion-order="" data-parent="" data-deployment-id="" data-topic-id="" data-span-id="" data-station-order="" data-status="" data-start-ms="" data-duration-ms="" data-parent-span="" data-graph-bounds="40,390,190,560">
+  <rect x="40.0" y="390.0" width="150.0" height="170.0" rx="10.0" fill="#ffffff" stroke="#d1d5db" stroke-width="2.0" filter="url(#shadowSoft)"/>
+  <text data-text-role="title" data-full-text="证据" data-text-max-width="126.0" x="115.0" y="475.0" text-anchor="middle" class="node-title" font-size="18">证据</text>
+  <text data-text-role="subtitle" data-full-text="evidence/
+lab1~lab4
+真实输出" data-text-max-width="126.0" x="115.0" y="497.0" text-anchor="middle" class="node-sub" font-size="10.5">evidence/ lab1~lab4…</text>
+  </g>
+</svg>

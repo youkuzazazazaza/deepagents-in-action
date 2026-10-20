@@ -1,0 +1,116 @@
+{
+ "schema_version": 1,
+ "mode": "architecture",
+ "template_type": "architecture",
+ "style": 1,
+ "quality_profile": "showcase",
+ "width": 960,
+ "height": 700,
+ "title": "计划驱动的工作流:TodoList 三状态",
+ "subtitle": "用户任务 -> model 看清单挑活 -> tools 执行 -> after_model 落账 -> 循环直到全部 completed",
+ "containers": [],
+ "nodes": [
+  {
+   "id": "user",
+   "label": "用户任务",
+   "sublabel": "掷两次骰子求和\n(多步小任务)",
+   "x": 360,
+   "y": 110,
+   "width": 240,
+   "height": 80,
+   "kind": "actor"
+  },
+  {
+   "id": "model",
+   "label": "model 规划/决策",
+   "sublabel": "每轮读 todos 挑下一件\n不靠脑内记忆",
+   "x": 360,
+   "y": 240,
+   "width": 240,
+   "height": 90,
+   "kind": "service"
+  },
+  {
+   "id": "tools",
+   "label": "tools 节点",
+   "sublabel": "执行当前步\nwrite_todos + 业务工具",
+   "x": 360,
+   "y": 400,
+   "width": 240,
+   "height": 100,
+   "kind": "service"
+  },
+  {
+   "id": "after",
+   "label": "after_model 节点",
+   "sublabel": "把 todos 新状态写回 State\n未完成 -> 回 model 循环",
+   "x": 360,
+   "y": 560,
+   "width": 240,
+   "height": 100,
+   "kind": "service"
+  },
+  {
+   "id": "todos",
+   "label": "todos 独立状态字段",
+   "sublabel": "pending -> in_progress -> completed\n一次只有一个 in_progress",
+   "x": 660,
+   "y": 400,
+   "width": 240,
+   "height": 100,
+   "kind": "database"
+  },
+  {
+   "id": "done",
+   "label": "交卷",
+   "sublabel": "全部 completed\n才输出最终答案",
+   "x": 660,
+   "y": 240,
+   "width": 240,
+   "height": 90,
+   "kind": "actor"
+  }
+ ],
+ "arrows": [
+  {
+   "id": "a1",
+   "source": "user",
+   "target": "model",
+   "source_port": "bottom",
+   "target_port": "top",
+   "flow": "data"
+  },
+  {
+   "id": "a2",
+   "source": "model",
+   "target": "tools",
+   "source_port": "bottom",
+   "target_port": "top",
+   "flow": "data"
+  },
+  {
+   "id": "a3",
+   "source": "tools",
+   "target": "after",
+   "source_port": "bottom",
+   "target_port": "top",
+   "flow": "data"
+  },
+  {
+   "id": "a4",
+   "source": "tools",
+   "target": "todos",
+   "source_port": "right",
+   "target_port": "left",
+   "flow": "write"
+  },
+  {
+   "id": "a5",
+   "source": "model",
+   "target": "done",
+   "source_port": "right",
+   "target_port": "left",
+   "flow": "data"
+  }
+ ]
+}
